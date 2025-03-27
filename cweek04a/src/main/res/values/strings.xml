@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">cweek04a</string>
     <string name="todolist_title">To-Do List</string>
+    <string name="my_info">202012308 오상훈</string>
 </resources>
