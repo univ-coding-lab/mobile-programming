@@ -38,7 +38,7 @@ fun TodoList(
             .padding(10.dp)
             .verticalScroll(state = scrollState)
     ) {
-        displayList.forEachIndexed { index, item ->
+        displayList.forEach { item ->
             Card(
                 modifier = Modifier.fillMaxWidth()
             ) {
@@ -49,6 +49,7 @@ fun TodoList(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     TodoCheckbox(checked = item.status == TodoStatus.COMPLETED) { checked ->
+                        val index = todoList.indexOf(item)
                         todoList[index] = item.copy(
                             status = if (checked) TodoStatus.COMPLETED else TodoStatus.PENDING
                         )
