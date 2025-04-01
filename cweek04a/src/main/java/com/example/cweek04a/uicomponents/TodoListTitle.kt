@@ -1,6 +1,5 @@
 package com.example.cweek04a.uicomponents
 
-import android.R.attr.fontWeight
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
