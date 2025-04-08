@@ -1,13 +1,11 @@
 package com.example.cweek05a.uicomponents
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -17,7 +15,32 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.example.cweek05a.R
+import com.example.cweek05a.model.ImageUri
+
+@Composable
+fun ImageWithButton(
+    image: ImageUri,
+    modifier: Modifier = Modifier,
+    button: @Composable () -> Unit
+) {
+    val img = when (image) {
+        is ImageUri.ResImage -> image.resID
+        is ImageUri.WebImage -> image.webUrl
+    }
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        AsyncImage(
+            model = img,
+            contentDescription = "이미지",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .size(200.dp)
+                .clip(CircleShape)
+        )
+        button()
+    }
+}
 
 @Composable
 fun ImageWithButton(
@@ -26,7 +49,6 @@ fun ImageWithButton(
     button: @Composable () -> Unit
 ) {
     Column(
-        modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         AsyncImage(
@@ -48,7 +70,6 @@ fun ImageWithButton(
     button: @Composable () -> Unit
 ) {
     Column(
-        modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         AsyncImage(
