@@ -23,3 +23,4 @@ rootProject.name = "MyAppOSH"
 include(":app")
 include(":cweek04a")
 include(":cweek05a")
+include(":homework2")
