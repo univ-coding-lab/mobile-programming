@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -49,6 +50,7 @@ fun MainScreen() {
         ImageItem(ImageUri.ResImage(R.drawable.nose), "Nose", showNose) { showNose = it },
         ImageItem(ImageUri.ResImage(R.drawable.shoes), "Shoes", showShoes) { showShoes = it },
     )
+    Text(text = "\n202012308 오상훈")
 
     val orientation = LocalConfiguration.current.orientation
 
