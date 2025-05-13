@@ -38,7 +38,14 @@ fun NavGraph(
         }
 
         composable(route = Routes.ScreenC.route) {
-            Screen_C(onNavigate = { navController.navigate(Routes.Home.route) })
+            Screen_C(onNavigate = {
+                navController.navigate(Routes.Home.route) {
+                    popUpTo(Routes.Home.route) {
+                        inclusive = true
+                    }
+                    launchSingleTop = true
+                }
+            })
         }
 
         composable(route = Routes.ScreenD.route) {
