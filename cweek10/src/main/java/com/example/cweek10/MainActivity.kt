@@ -8,7 +8,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.cweek10.example03.MainScreen04
+import com.example.cweek10.example06.NotificationNavGraph
 import com.example.cweek10.ui.theme.MobileprogrammingTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MobileprogrammingTheme {
-                MainScreen04()
+                NotificationNavGraph()
             }
         }
     }
